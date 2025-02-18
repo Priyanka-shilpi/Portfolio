@@ -8,6 +8,8 @@ const Contact = () => {
         You can reach me at <strong>shilpipriyanka47@gmail.com</strong> or connect with me on <br></br>
 <br></br>
         <strong><a href= "https://www.linkedin.com/in/priyanka-shilpi-27b39122a">linkedin</a></strong>.
+        <br />
+        <strong><a href="https://github.com/Priyanka-shilpi">github</a></strong>
       </p>
     </section>
   );

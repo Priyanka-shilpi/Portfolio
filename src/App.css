@@ -36,26 +36,3 @@
     transform: rotate(360deg);
   }
 }
-section {
-  background-image: url('https://i.pinimg.com/736x/d1/00/1f/d1001f11e170e53af180eb6840ad2b11.jpg'); /* Path to your image in the public folder */
-  background-size: cover; /* Ensures the image covers the entire section */
-  background-position: center; /* Centers the image */
-  background-attachment: fixed; /* Makes the background fixed while scrolling */
-  padding: 100px 20px;
-  text-align: center;
-  color: white; /* Adjust text color for better visibility */
-  position: relative;
-  z-index: 1;
-}
-
-/* Overlay to Improve Text Readability */
-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
-  z-index: -1;
-}

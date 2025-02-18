@@ -1,62 +1,25 @@
-/*body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin: 0;
   padding: 0;
-}
-
-header {
-  background-color: #333;
   color: white;
-  padding: 10px 0;
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-section {
-  padding: 20px;
-  text-align: center;
-}*/
-/* General Styles */
-body {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  color: black;
-  background: url('https://i.pinimg.com/736x/d6/a7/af/d6a7af9246f0be9a2ee08c01d03845ef.jpg') no-repeat center center fixed; 
-  background-size: cover; /* Ensure the image covers the entire screen */
-  color: white;
-  height: 20%;
   font-size: large;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+
+  /* FIX: Background Image Stretches to Fit Content */
+  background: url('https://i.pinimg.com/736x/d6/a7/af/d6a7af9246f0be9a2ee08c01d03845ef.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
+/* Ensure Background Covers Full Content */
+html, body {
+  height: auto; /* Allow body to expand */
+  min-height: 100vh;
+}
+
+/* Fix for anchor links */
 a {
   text-decoration: none;
   color: inherit;
@@ -64,12 +27,13 @@ a {
 
 /* Header Styles */
 header {
-  background-color:rgb(23, 95, 124);;
-  color:black;
+  background-color: rgb(23, 95, 124);
+  color: black;
   padding: 20px 0;
   box-shadow: 0 4px 6px rgba(231, 227, 227, 0.1);
 }
 
+/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
@@ -81,30 +45,29 @@ nav ul {
 }
 
 nav ul li a {
-  color:black;
+  color: black;
   font-weight: bold;
   font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-  color:rgb(239, 182, 13);
+  color: rgb(239, 182, 13);
 }
 
-/* Global Section Styles */
+/* Section Styles */
 section {
   width: 100%;
-  max-width: 1200px; /* Limits width for better readability */
+  max-width: 1200px;
   margin: 0 auto;
   padding: 100px 20px;
   text-align: center;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: black; /* Default text color */
+  min-height: 100vh; /* FIX: Ensures full height */
+  position: relative;
+  background: inherit; /* FIX: Background continues */
 }
 
-/* Add an overlay to improve text readability */
+/* Overlay for readability */
 section::before {
   content: '';
   position: absolute;
@@ -112,35 +75,36 @@ section::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3); /* Lighter overlay */
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: -1;
 }
 
-/* Specific Section Styles */
+/* Specific Section Colors */
 .home {
- 
-  color:rgb(135, 204, 231);
-  height: 100%;
-
+  color: rgb(135, 204, 231);
 }
-.home h1{
-  color:goldenrod;
+
+.home h1 {
+  color: goldenrod;
 }
 
 .about {
-  
-  color:white;
+  position: relative;
+  color: white;
 }
-.about h1{
+
+.about h1 {
   color: goldenrod;
 }
+
 .projects {
-  
   color: black;
 }
-.projects h1{
+
+.projects h1 {
   color: goldenrod;
 }
+
 .projects ul {
   list-style: none;
   padding: 0;
@@ -165,80 +129,167 @@ section::before {
 }
 
 .contact {
-  
-  color:goldenrod;
+  color: goldenrod;
 }
 
 /* Footer Styles */
 footer {
-  background-color:skyblue;
+  background-color: skyblue;
   color: white;
   text-align: center;
   padding: 20px;
   margin-top: auto;
 }
 
-/* Fixed Image Styling */
-.picture {
-  position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid #1abc9c;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  transition: transform 0.3s ease;
+/* FIX: Footer stays at bottom */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 
-.picture:hover {
-  transform: translateY(-50%) scale(1.1);
+/* Ensure sections take enough space before the footer */
+section {
+  min-height: auto; /* Allows content to expand */
+  padding: 50px 20px;
+  text-align: center;
 }
 
-/* Responsive Design */
+/* Footer styling */
+footer {
+  background-color: rgb(11, 53, 70);
+  color: black;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Layout adjustments */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header, .nav, .main, .footer {
+  padding: 10px;
+}
+
+/* RESPONSIVE FIX */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
     gap: 10px;
   }
 
-  .picture {
-    width: 100px;
-    height: 100px;
-    right: 10px;
+  body {
+    background-size: cover; /* Ensures full coverage */
+    background-attachment: scroll; /* FIX: Prevents background from cutting off */
+  }
+
+  section {
+    min-height: auto; /* Allows content to expand naturally */
   }
 }
-/* Ensure the body and HTML take up the full viewport */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+/* Basic styles for nav */
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 50px;
+  background-color: rgb(23, 95, 124);
 }
 
-/* Wrapper for all page content except the footer */
-.page-container {
-  flex: 1; /* Pushes the footer down */
-  display: flex;
-  flex-direction: column;
-  
+nav ul {
+  list-style: none;
+  display:flex;
+  gap:30px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 80%;
 }
 
-/* Ensure sections take enough space before the footer */
-section {
-  min-height: 70vh; /* Adjust this value if needed */
-  padding: 50px 20px;
-  text-align: center;
+nav ul li a {
+  color:rgb(239, 182, 13);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
 
-/* Footer stays at the bottom */
-footer {
-  background-color:rgb(11, 53, 70);
+nav ul li a:hover {
   color:black;
-  text-align: center;
-  padding: 5px;
-  margin-top: auto;
 }
+
+/* Hide menu on small screens */
+#nav-links {
+  display: flex;
+}
+
+#nav-links li {
+  display: inline-block;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  /* Hide nav links and show menu icon */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  nav ul {
+    width: 100%;
+  }
+
+  nav ul li a {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(23, 95, 124);
+    color: black;
+    border-top: 1px solid white;
+  }
+
+  nav ul li a:hover {
+    color: rgb(239, 182, 13);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+/* Home.css */
+.home {
+  text-align: center;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.3); /* Optional: For text readability */
+  color: white;
+}
+
+.home h1 {
+  color: goldenrod;
+}
+
+.home p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: white;
+}
+
+
