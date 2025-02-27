@@ -5,6 +5,8 @@ const Home = () => {
  
   return (
     <main className="home">
+       <img src="https://i.pinimg.com/736x/39/cf/cb/39cfcbbbab0cf7d99a82ed871a5341de.jpg" alt="Your Name" className="profile-picture" />
+
       <h1>Welcome to My Portfolio</h1>
       <p>
         Hi, I’m <strong>PRIYANKA SHILPI</strong>, a passionate frontend developer and data science enthusiast.
